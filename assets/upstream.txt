@@ -7,4 +7,4 @@ DEFINITION:
 
 IMPLEMENTATION DETAILS:
 1) Responsive design
-2) Achromatic color scheme
+
