@@ -7,4 +7,3 @@ DEFINITION:
 
 IMPLEMENTATION DETAILS:
 1) Responsive design
-

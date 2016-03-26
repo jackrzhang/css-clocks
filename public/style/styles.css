@@ -83,5 +83,40 @@ body {
 
 /* Mobile */
 @media (max-width: 700px) {
-    
+    .clock-display {
+        width: 360px;
+    }
+
+    .time-unit-container {
+        padding: 0 15px;
+    }
+
+    .binary-digit-container {
+        padding-top: 44px;
+    }
+
+    .binary-digit-square {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+/* Extra small screens */ 
+@media (max-width: 370px) {
+    .clock-display {
+        width: 300px;
+    }
+
+    .time-unit-container {
+        padding: 0 12px;
+    }
+
+    .binary-digit-container {
+        padding-top: 37px;
+    }
+
+    .binary-digit-square {
+        width: 28px;
+        height: 28px;
+    }
 }

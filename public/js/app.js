@@ -6,7 +6,7 @@ $(document).ready(function() {
 function tickTock() {
     // Call every second
     setInterval( function() {
-        console.log(formatTime());
+        // console.log(formatTime());
         updateDisplay();
     }, 1000)
 }
