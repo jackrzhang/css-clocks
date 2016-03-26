@@ -76,7 +76,7 @@ body {
     letter-spacing: 1.2px;
     text-transform: lowercase;
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
