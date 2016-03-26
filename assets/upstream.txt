@@ -2,8 +2,9 @@ Project: Poke
 Date: 160219
 Author: jackrzhang
 
-Problem DEFINITION:
+DEFINITION:
 1) A real time, online binary clock.
 
 IMPLEMENTATION DETAILS:
-1) Responsive design.
+1) Responsive design
+2) Achromatic color scheme
