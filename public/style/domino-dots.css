@@ -1,6 +1,7 @@
 .dot {
     position: absolute;
-    background-color: rgb(250, 250, 250);
+    /* dots are hidden by default */
+    background-color: rgb(40, 40, 60);
     border-radius: 50%;
     transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
@@ -9,6 +10,10 @@
     -o-transform: translateX(-50%) translateY(-50%);
     width: 18px;
     height: 18px;
+}
+
+.show {
+    background-color: rgb(250, 250, 250);
 }
 
 @media (max-width: 1000px) {
