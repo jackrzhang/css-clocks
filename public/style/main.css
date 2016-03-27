@@ -32,7 +32,7 @@ body {
 
 .half-domino-container {
     position: relative;
-    padding-top: 121px;
+    padding-top: 132px;
 }
 
 .half-domino-background {
@@ -45,7 +45,7 @@ body {
     -moz-transform: translateX(-50%) translateY(-50%);
     -o-transform: translateX(-50%) translateY(-50%);    
     width: 85%;
-    height: 110px;
+    height: 120px;
     background-color: rgb(40, 40, 60);
 }
 
