@@ -1,5 +1,5 @@
-Project: Poke
-Date: 160219
+Project: Binary Clock
+Date: 160325
 Author: jackrzhang
 
 DEFINITION:
