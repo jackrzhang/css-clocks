@@ -3,7 +3,11 @@ function updateDomino(unit, column, value) {
     var valueTop, valueBottom;
 
     // Randomly split new domino value into two integer values for each half domino
-    valueTop = Math.floor(Math.random() * (value + 1));
+    if ( value <=6 ) {
+        valueTop = Math.floor(Math.random() * (value + 1));
+    } else { // value > 6
+        valueTop = Math.floor(Math.random() * (6 - (value-6) + 1) + value-6);
+    }
     valueBottom = value - valueTop;
 
     updateHalfDomino(halfDominoIdPrefix, 'top', valueTop);
