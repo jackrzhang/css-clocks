@@ -1,0 +1,9 @@
+Project: Recursive Clock
+Date: 160327
+Author: jackrzhang
+
+DEFINITION:
+1) A clock, within a clock, within a clock, within a clock...
+
+IMPLEMENTATION DETAILS:
+1) Responsive design
