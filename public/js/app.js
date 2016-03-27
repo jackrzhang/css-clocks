@@ -1,30 +1,47 @@
 $(document).ready(function() {
+    var previousTimeDigits;
+    var timeDigits = formatTime();
+
     tickTock();
 });
 
 function tickTock() {
-    // Call every second
-    setInterval( function() {
-        console.log(formatTime());
-        updateDisplay();
-    }, 1000)
-}
-
-function updateDisplay() {
-    var timeDigits = formatTime();
-
-    // See domino.js
+    // Instantiate display
     updateDomino('hours', 'tens', timeDigits[0]);
     updateDomino('hours', 'ones', timeDigits[1]);
     updateDomino('minutes', 'tens', timeDigits[2]);
     updateDomino('minutes', 'ones', timeDigits[3]);
     updateDomino('seconds', 'tens', timeDigits[4]);
     updateDomino('seconds', 'ones', timeDigits[5]);
+
+    // Update display every second
+    setInterval( function() {
+        updateDisplay();
+    }, 1000)
+}
+
+function updateDisplay() {
+    previousTimeDigits = timeDigits;
+    timeDigits = formatTime();
+
+    // Only update dominos for changed time digits
+    if ( previousTimeDigits[0] != timeDigits[0] ) 
+        updateDomino('hours', 'tens', timeDigits[0]);
+    if ( previousTimeDigits[1] != timeDigits[1] ) 
+        updateDomino('hours', 'ones', timeDigits[1]);
+    if ( previousTimeDigits[2] != timeDigits[2] ) 
+        updateDomino('minutes', 'tens', timeDigits[2]);
+    if ( previousTimeDigits[3] != timeDigits[3] ) 
+        updateDomino('minutes', 'ones', timeDigits[3]);
+    if ( previousTimeDigits[4] != timeDigits[4] ) 
+        updateDomino('seconds', 'tens', timeDigits[4]);
+    if ( previousTimeDigits[5] != timeDigits[5] ) 
+        updateDomino('seconds', 'ones', timeDigits[5]);
 }
 
 function formatTime() {
     var time = getCurrentTime();
-    var timeDigits = new Array();
+    timeDigits = new Array();
 
     // Add padding and convert to type string
     for ( var i = 0; i < time.length; i++ ) {

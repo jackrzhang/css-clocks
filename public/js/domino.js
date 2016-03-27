@@ -1,7 +1,13 @@
-function updateDomino(unit, column, newValue) {
+function updateDomino(unit, column, value) {
     var halfDominoIdPrefix = unit + '-' + column;
-    
-    updateHalfDomino(halfDominoIdPrefix, 'top', newValue);
+    var valueTop, valueBottom;
+
+    // Randomly split new domino value into two integer values for each half domino
+    valueTop = Math.floor(Math.random() * (value + 1));
+    valueBottom = value - valueTop;
+
+    updateHalfDomino(halfDominoIdPrefix, 'top', valueTop);
+    updateHalfDomino(halfDominoIdPrefix, 'bottom', valueBottom);
 }
 
 function updateHalfDomino(halfDominoIdPrefix, halfDominoSide, value) {
