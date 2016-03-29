@@ -37,6 +37,14 @@ body {
     text-align: center;
 }
 
+.card-container.black {
+    color: rgb(40, 40, 60);
+}
+
+.card-container.red {
+    color: ;
+}
+
 .card-background {
     position: absolute;
     top: 50%;
