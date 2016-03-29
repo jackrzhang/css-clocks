@@ -1,0 +1,11 @@
+Project: Playing Card Clock
+Date: 160329
+Author: jackrzhang
+
+DEFINITION:
+1) A decimal clock that displays playing cards.
+
+IMPLEMENTATION DETAILS:
+1) Responsive design
+2) Only update new time digits with new playing cards
+3) Card suits for new playing cards are selected and displayed randomly
