@@ -33,7 +33,7 @@
 .suit-symbol {
     font-size: 40px;
     /* Default hidden */
-    visibility: visible;
+    visibility: hidden;
 }
 
 .suit-symbol.show {
@@ -176,7 +176,6 @@
     top: 58%;
     left: 68%;
 }
-
 
 .suit-symbol.suit-symbol-6-2 {
     top: 62.5%;

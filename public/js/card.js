@@ -1,24 +1,15 @@
 function updateCard(unit, column, value) {
     var cardId = unit + '-' + column;
 
-    // Determine and update card color (red, black) randomly
-    if ( Math.random() < 0.5 ) {
-        $('#' + cardId).removeClass('black');
-        $('#' + cardId).addClass('red');
-    } else {
-        $('#' + cardId).removeClass('red');
-        $('#' + cardId).addClass('black');
-    }
-
     // Determine card suit randomly
     var suitRandom = Math.random();
-    if ( Math.random() < 0.25 ) {
+    if ( suitRandom < 0.25 ) {
         // spades
         var suit = '&#9824';
-    } else if ( Math.random() < 0.5 ) {
+    } else if ( suitRandom < 0.5 ) {
         // hearts
         var suit = '&#9829';
-    } else if ( Math.random() < 0.75 ) {
+    } else if ( suitRandom < 0.75 ) {
         // clubs
         var suit = '&#9827';
     } else {
@@ -26,103 +17,243 @@ function updateCard(unit, column, value) {
         var suit = '&#9830';
     }
 
-    // Update card value
-    $('#' + cardId).children('.card-value').html(value);
+    // Update suit
+    $('#' + cardId).children('.suit-label').html(suit);
+    $('#' + cardId).children('.suit-symbol').html(suit);
 
-    // Update all suit symbols on card
-    //updateSuitSymbols(cardId, suit, value);
+    // Update card color according to suit
+    if ( suit == '&#9829' || suit == '&#9830' ) {
+        // red for hearts and diamonds
+        $('#' + cardId).removeClass('black');
+        $('#' + cardId).addClass('red');
+    } else {
+        // black for spades and clubs
+        $('#' + cardId).removeClass('red');
+        $('#' + cardId).addClass('black');
+    }
+
+    // Update card value (Ace for 1)
+    if (value == 1) {
+        $('#' + cardId).children('.card-value').html('A');
+    } else {
+        $('#' + cardId).children('.card-value').html(value);
+    }
+
+    // Show or hide appropriate suit symbols on card
+    updateSuitSymbols(cardId, suit, value);
 }
 
 function updateSuitSymbols(cardId, suit, value) {
 
     switch(value) {
+        case 0:
+            $('#' + cardId).children('.suit-symbol-1-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-3').removeClass('show');
+            break;
         case 1:
-            $(halfDominoQuery).children('.dot-one').removeClass('show');
-            $(halfDominoQuery).children('.dot-two').removeClass('show');
-            $(halfDominoQuery).children('.dot-three').removeClass('show');
-            $(halfDominoQuery).children('.dot-four').removeClass('show');
-            $(halfDominoQuery).children('.dot-five').removeClass('show');
-            $(halfDominoQuery).children('.dot-six').removeClass('show');
-            $(halfDominoQuery).children('.dot-seven').removeClass('show');
-            $(halfDominoQuery).children('.dot-eight').removeClass('show');
-            $(halfDominoQuery).children('.dot-nine').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-4-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-3').removeClass('show');
             break;
         case 2:
-            $(halfDominoQuery).children('.dot-one').removeClass('show');
-            $(halfDominoQuery).children('.dot-two').removeClass('show');
-            $(halfDominoQuery).children('.dot-three').removeClass('show');
-            $(halfDominoQuery).children('.dot-four').removeClass('show');
-            $(halfDominoQuery).children('.dot-five').addClass('show');
-            $(halfDominoQuery).children('.dot-six').removeClass('show');
-            $(halfDominoQuery).children('.dot-seven').removeClass('show');
-            $(halfDominoQuery).children('.dot-eight').removeClass('show');
-            $(halfDominoQuery).children('.dot-nine').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-7-3').removeClass('show');
             break;
         case 3:
-            $(halfDominoQuery).children('.dot-one').addClass('show');
-            $(halfDominoQuery).children('.dot-two').removeClass('show');
-            $(halfDominoQuery).children('.dot-three').removeClass('show');
-            $(halfDominoQuery).children('.dot-four').removeClass('show');
-            $(halfDominoQuery).children('.dot-five').removeClass('show');
-            $(halfDominoQuery).children('.dot-six').removeClass('show');
-            $(halfDominoQuery).children('.dot-seven').removeClass('show');
-            $(halfDominoQuery).children('.dot-eight').removeClass('show');
-            $(halfDominoQuery).children('.dot-nine').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-4-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-7-3').removeClass('show');
             break;
         case 4:
-            $(halfDominoQuery).children('.dot-one').addClass('show');
-            $(halfDominoQuery).children('.dot-two').removeClass('show');
-            $(halfDominoQuery).children('.dot-three').removeClass('show');
-            $(halfDominoQuery).children('.dot-four').removeClass('show');
-            $(halfDominoQuery).children('.dot-five').addClass('show');
-            $(halfDominoQuery).children('.dot-six').removeClass('show');
-            $(halfDominoQuery).children('.dot-seven').removeClass('show');
-            $(halfDominoQuery).children('.dot-eight').removeClass('show');
-            $(halfDominoQuery).children('.dot-nine').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-3').addClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-7-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-3').addClass('show');
             break;
         case 5:
-            $(halfDominoQuery).children('.dot-one').addClass('show');
-            $(halfDominoQuery).children('.dot-two').removeClass('show');
-            $(halfDominoQuery).children('.dot-three').addClass('show');
-            $(halfDominoQuery).children('.dot-four').removeClass('show');
-            $(halfDominoQuery).children('.dot-five').removeClass('show');
-            $(halfDominoQuery).children('.dot-six').removeClass('show');
-            $(halfDominoQuery).children('.dot-seven').addClass('show');
-            $(halfDominoQuery).children('.dot-eight').removeClass('show');
-            $(halfDominoQuery).children('.dot-nine').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-3').addClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-4-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-7-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-3').addClass('show');
+            break;
+        case 6:
+            $('#' + cardId).children('.suit-symbol-1-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-3').addClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-3').addClass('show');
+            $('#' + cardId).children('.suit-symbol-5-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-7-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-3').addClass('show');
             break;
         case 7:
-            $(halfDominoQuery).children('.dot-one').addClass('show');
-            $(halfDominoQuery).children('.dot-two').removeClass('show');
-            $(halfDominoQuery).children('.dot-three').addClass('show');
-            $(halfDominoQuery).children('.dot-four').removeClass('show');
-            $(halfDominoQuery).children('.dot-five').addClass('show');
-            $(halfDominoQuery).children('.dot-six').removeClass('show');
-            $(halfDominoQuery).children('.dot-seven').addClass('show');
-            $(halfDominoQuery).children('.dot-eight').removeClass('show');
-            $(halfDominoQuery).children('.dot-nine').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-3').addClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-3-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-3').addClass('show');
+            $('#' + cardId).children('.suit-symbol-5-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-7-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-3').addClass('show');
             break;
         case 8:
-            $(halfDominoQuery).children('.dot-one').addClass('show');
-            $(halfDominoQuery).children('.dot-two').removeClass('show');
-            $(halfDominoQuery).children('.dot-three').addClass('show');
-            $(halfDominoQuery).children('.dot-four').addClass('show');
-            $(halfDominoQuery).children('.dot-five').removeClass('show');
-            $(halfDominoQuery).children('.dot-six').addClass('show');
-            $(halfDominoQuery).children('.dot-seven').addClass('show');
-            $(halfDominoQuery).children('.dot-eight').removeClass('show');
-            $(halfDominoQuery).children('.dot-nine').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-3').addClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-3-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-3').addClass('show');
+            $('#' + cardId).children('.suit-symbol-5-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-7-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-7-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-3').addClass('show');
             break;
-        default: 
-            $(halfDominoQuery).children('.dot-one').removeClass('show');
-            $(halfDominoQuery).children('.dot-two').removeClass('show');
-            $(halfDominoQuery).children('.dot-three').removeClass('show');
-            $(halfDominoQuery).children('.dot-four').removeClass('show');
-            $(halfDominoQuery).children('.dot-five').removeClass('show');
-            $(halfDominoQuery).children('.dot-six').removeClass('show');
-            $(halfDominoQuery).children('.dot-seven').removeClass('show');
-            $(halfDominoQuery).children('.dot-eight').removeClass('show');
-            $(halfDominoQuery).children('.dot-nine').removeClass('show');
+        case 9:
+            $('#' + cardId).children('.suit-symbol-1-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-1-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-3').addClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-3-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-3-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-3').addClass('show');
+            $('#' + cardId).children('.suit-symbol-4-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-5-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-3').addClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-7-1').addClass('show');
+            $('#' + cardId).children('.suit-symbol-7-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-3').addClass('show');
+            break;
+        default:
+            $('#' + cardId).children('.suit-symbol-1-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-1-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-3-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-5-3').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-1').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-7-3').removeClass('show');
             break;
     }
 }
