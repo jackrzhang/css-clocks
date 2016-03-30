@@ -202,15 +202,15 @@ function updateSuitSymbols(cardId, value) {
             $('#' + cardId).children('.suit-symbol-1-1').addClass('show');
             $('#' + cardId).children('.suit-symbol-1-2').removeClass('show');
             $('#' + cardId).children('.suit-symbol-1-3').addClass('show');
-            $('#' + cardId).children('.suit-symbol-2-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-2-2').removeClass('show');
             $('#' + cardId).children('.suit-symbol-3-1').addClass('show');
             $('#' + cardId).children('.suit-symbol-3-3').addClass('show');
             $('#' + cardId).children('.suit-symbol-4-1').removeClass('show');
-            $('#' + cardId).children('.suit-symbol-4-2').removeClass('show');
+            $('#' + cardId).children('.suit-symbol-4-2').addClass('show');
             $('#' + cardId).children('.suit-symbol-4-3').removeClass('show');
             $('#' + cardId).children('.suit-symbol-5-1').addClass('show');
             $('#' + cardId).children('.suit-symbol-5-3').addClass('show');
-            $('#' + cardId).children('.suit-symbol-6-2').addClass('show');
+            $('#' + cardId).children('.suit-symbol-6-2').removeClass('show');
             $('#' + cardId).children('.suit-symbol-7-1').addClass('show');
             $('#' + cardId).children('.suit-symbol-7-2').removeClass('show');
             $('#' + cardId).children('.suit-symbol-7-3').addClass('show');
