@@ -31,7 +31,7 @@
 }
 
 .suit-symbol {
-    font-size: 30px;
+    font-size: 36px;
 }
 
 /* --- Reponsive Sizing --- */
@@ -44,7 +44,7 @@
         font-size: 13px;
     }
     .suit-symbol {
-        font-size: 25px;
+        font-size: 32px;
     }
 }
 
@@ -55,6 +55,9 @@
     .suit-label {
         font-size: 11px;
     }
+    .suit-symbol {
+        font-size: 28px;
+    }
 }
 
 @media (max-width: 750px) {
@@ -64,6 +67,9 @@
     .suit-label {
         font-size: 10px;
     }
+    .suit-symbol {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 370px) {
@@ -72,6 +78,9 @@
     }
     .suit-label {
         font-size: 9px;
+    }
+    .suit-symbol {
+        font-size: 13px;
     }
 }
 
