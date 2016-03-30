@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400);
 @import url('card-components.css');
+@import url('clock-info-time.css');
 
 body {
     background: rgb(250, 250, 250);
