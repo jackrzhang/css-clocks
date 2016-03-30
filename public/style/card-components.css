@@ -31,7 +31,13 @@
 }
 
 .suit-symbol {
-    font-size: 36px;
+    font-size: 40px;
+    /* Default hidden */
+    visibility: visible;
+}
+
+.suit-symbol.show {
+    visibility: visible;
 }
 
 /* --- Reponsive Sizing --- */
@@ -44,7 +50,7 @@
         font-size: 13px;
     }
     .suit-symbol {
-        font-size: 32px;
+        font-size: 35px;
     }
 }
 
@@ -121,6 +127,26 @@
     left: 68%;
 }
 
+.suit-symbol.suit-symbol-2-2 {
+    top: 37.5%;
+    left: 50%;
+}
+
+.suit-symbol.suit-symbol-3-1 {
+    top: 42%;
+    left: 32%;
+}
+
+.suit-symbol.suit-symbol-3-2 {
+    top: 42%;
+    left: 50%;
+}
+
+.suit-symbol.suit-symbol-3-3 {
+    top: 42%;
+    left: 68%;
+}
+
 .suit-symbol.suit-symbol-4-1 {
     top: 50%;
     left: 32%;
@@ -134,6 +160,27 @@
 .suit-symbol.suit-symbol-4-3 {
     top: 50%;
     left: 68%;
+}
+
+.suit-symbol.suit-symbol-5-1 {
+    top: 58%;
+    left: 32%;
+}
+
+.suit-symbol.suit-symbol-5-2 {
+    top: 58%;
+    left: 50%;
+}
+
+.suit-symbol.suit-symbol-5-3 {
+    top: 58%;
+    left: 68%;
+}
+
+
+.suit-symbol.suit-symbol-6-2 {
+    top: 62.5%;
+    left: 50%;
 }
 
 .suit-symbol.suit-symbol-7-1 {
