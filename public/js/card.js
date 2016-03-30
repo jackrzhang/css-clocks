@@ -1,21 +1,17 @@
-function updateDomino(unit, column, value) {
-    var halfDominoIdPrefix = unit + '-' + column;
-    var valueTop, valueBottom;
+function updateCard(unit, column, value) {
+    var cardId = unit + '-' + column;
 
-    // Randomly split new domino value into two integer values for each half domino
-    if ( value <=6 ) {
-        valueTop = Math.floor(Math.random() * (value + 1));
-    } else { // value > 6
-        valueTop = Math.floor(Math.random() * (6 - (value-6) + 1) + value-6);
+    // Determine card color (red/black) randomly
+    if ( Math.random() < 0.5 ) {
+        $('#' + cardId).removeClass('black');
+        $('#' + cardId).addClass('red');
+    } else {
+        $('#' + cardId).removeClass('red');
+        $('#' + cardId).addClass('black');
     }
-    valueBottom = value - valueTop;
-
-    updateHalfDomino(halfDominoIdPrefix, 'top', valueTop);
-    updateHalfDomino(halfDominoIdPrefix, 'bottom', valueBottom);
 }
 
-function updateHalfDomino(halfDominoIdPrefix, halfDominoSide, value) {
-    var halfDominoQuery = '#' + halfDominoIdPrefix + '-' + halfDominoSide;
+function updateSuitSymbols(cardId, suit, value) {
 
     switch(value) {
         case 0:
