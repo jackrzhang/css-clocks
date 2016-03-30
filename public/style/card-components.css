@@ -40,6 +40,10 @@
     visibility: visible;
 }
 
+.suit-symbol.ace-of-spades {
+    font-size: 80px;
+}
+
 /* --- Reponsive Sizing --- */
 
 @media (max-width: 1200px) {
@@ -51,6 +55,9 @@
     }
     .suit-symbol {
         font-size: 35px;
+    }
+    .suit-symbol.ace-of-spades {
+        font-size: 70px;
     }
 }
 
@@ -64,6 +71,9 @@
     .suit-symbol {
         font-size: 28px;
     }
+    .suit-symbol.ace-of-spades {
+        font-size: 56px;
+    }
 }
 
 @media (max-width: 750px) {
@@ -76,6 +86,9 @@
     .suit-symbol {
         font-size: 14px;
     }
+    .suit-symbol.ace-of-spades {
+        font-size: 28px;
+    }
 }
 
 @media (max-width: 370px) {
@@ -87,6 +100,9 @@
     }
     .suit-symbol {
         font-size: 13px;
+    }
+    .suit-symbol.ace-of-spades {
+        font-size: 26px;
     }
 }
 

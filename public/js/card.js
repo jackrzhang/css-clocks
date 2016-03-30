@@ -33,10 +33,17 @@ function updateCard(unit, column, value) {
     }
 
     // Update card value (Ace for 1)
-    if (value == 1) {
+    if ( value == 1 ) {
         $('#' + cardId).children('.card-value').html('A');
     } else {
         $('#' + cardId).children('.card-value').html(value);
+    }
+
+    // Special case: ace of spades
+    if ( value == 1 && suit == '&#9824' ) {
+        $('#' + cardId).children('.suit-symbol').addClass('ace-of-spades');
+    } else {
+        $('#' + cardId).children('.suit-symbol').removeClass('ace-of-spades');
     }
 
     // Show or hide appropriate suit symbols on card
