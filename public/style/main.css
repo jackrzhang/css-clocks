@@ -37,11 +37,11 @@ body {
 }
 
 .card-container.black {
-    color: rgb(40, 40, 60);
+    color: rgb(60, 60, 80);
 }
 
 .card-container.red {
-    color: red;
+    color: rgb(240,101,116)
 }
 
 .card-background {
