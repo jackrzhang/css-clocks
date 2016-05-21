@@ -2,7 +2,7 @@
 
 Each playing card displays a time digit, in the form of HH-MM-SS. Card suits are selected and displayed randomly.
 
-Click [here](http://playing-card-clock.jackrzhang.com) to see.
+Click [here](http://css-clocks.jackrzhang.com/playing-card-clock) to see.
 
 #### tools:
 1. Pure.css grids
