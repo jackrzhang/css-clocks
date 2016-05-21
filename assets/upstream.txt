@@ -1,0 +1,11 @@
+Project: Domino Clock
+Date: 160327
+Author: jackrzhang
+
+DEFINITION:
+1) A clock, within a clock, within a clock, within a clock...
+
+IMPLEMENTATION DETAILS:
+1) Responsive design
+2) Only update time digits that change with new dominos
+3) New dominos, as long as they are of appropriate value, are random in orientation and type.
