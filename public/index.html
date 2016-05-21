@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An online collection of clocks.">
+    <meta name="author" content="jackrzhang">
+
+    <title>CSS Clocks</title>
+
+    <!-- Pure.css -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+
+        body {
+            background: rgb(250, 250, 250);
+            color: rgb(40, 40, 60);
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .clock-display {
+            width: 650px;
+            margin-top: -40px;
+        }
+
+        .time-unit-container {
+            padding: 0 25px;
+        }
+
+        .title {
+            font-size: 33px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-top: 15%;
+        }
+
+        .credit {
+            font-size: 12px;
+            letter-spacing: 1.2px;
+            text-transform: lowercase;
+            margin-top: 15px;
+        }
+
+        .clock-link {
+            font-size: 16px;
+            text-transform: lowercase;
+            margin: 9px 0;
+        }
+
+        .clock-list {
+            margin-top: 3%;
+            padding-top: 20px;
+        }
+
+        a {
+            color: rgb(40, 40, 60);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: rgb(80, 80, 100);
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="title">CSS Clocks</div>
+    <div class="credit">by <a target="_blank" href="http://github.com/jackrzhang">jackrzhang</a></div>
+
+    <div class="clock-list">
+        <div class="clock-link"><a target="_blank" href="binary-clock/public/index.html">Binary Clock</a></div>
+        <div class="clock-link"><a target="_blank" href="domino-clock/public/index.html">Domino Clock</a></div>
+        <div class="clock-link"><a target="_blank" href="playing-card-clock/public/index.html">Playing Card Clock</a></div>
+    </div>
+
+</body>
+
+</html>
